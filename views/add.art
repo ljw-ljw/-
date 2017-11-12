@@ -1,0 +1,61 @@
+{{include './share/header'}} 
+{{include './share/nav'}}
+<style type="text/css">
+	form {
+		margin-top: 60px;
+	}
+	
+	.control-label {
+		text-align: center;
+		padding-top: 5px !important;
+		padding-right: 0 !important;
+	}
+</style>
+
+<!-- 添加学生表单 -->
+<div class="container">
+	<form action="/student/add" method="post" class="form-horizontal">
+		<!-- 姓名 -->
+		<div class="form-group">
+			<label for="name" class="control-label col-xs-3">姓名</label>
+			<input type="text" name="name" id="name" class="col-xs-7" required="required" pattern="^[\u4e00-\u9fa5]{2,4}$" />
+		</div>
+		<!-- 年龄 -->
+		<div class="form-group">
+			<label for="age" class="control-label col-xs-3">年龄</label>
+			<input type="number" name="age" id="age" class="col-xs-7" value="20" required="required" />
+		</div>
+		<!-- 性别 -->
+		<div class="form-group">
+			<label class="control-label col-xs-3">性别</label>
+			<label for="male" class="radio-inline">
+						<input type="radio" name="gender" id="male" value="true" checked />男
+					</label>
+			<label for="female" class="radio-inline">
+						<input type="radio" name="gender" id="female" value="false" />女
+					</label>
+		</div>
+		<!--手机号码-->
+		<div class="form-group">
+			<label for="phone" class="control-label col-xs-3">号码</label>
+			<input type="tel" name="phone" id="phone" class="col-xs-7" required="required" pattern="^1[3|4|5|7|8]\d{9}$" />
+		</div>
+		<!-- 邮箱 -->
+		<div class="form-group">
+			<label for="email" class="control-label col-xs-3">邮箱</label>
+			<input type="email" name="email" id="email" class="col-xs-7" required="required" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" />
+		</div>
+		<!-- 备注 -->
+		<div class="form-group">
+			<label for="detail" class="control-label col-xs-3">备注</label>
+			<textarea name="detail" id="detail" class="col-xs-7"></textarea>
+		</div>
+		<!-- 提交按钮 -->
+		<div class="form-group">
+			<input type="submit" class="btn btn-primary col-xs-8 col-xs-offset-2" value="添加" />
+		</div>
+	</form>
+</div>
+</body>
+
+</html>
